@@ -1,0 +1,12 @@
+{:paths ["src"]
+ :deps  {lib                 {:local/root "./jars/lib.jar"}
+         org.clojure/clojure {:mvn/version "1.10.0"}}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps  {healthsamurai/matcho {:mvn/version "0.3.7"}}}
+  :kaocha {:extra-deps {lambdaisland/kaocha {:mvn/version "1.0-612"}}
+           :extra-paths ["test"]
+           :jvm-opts    ^:replace ["-XX:-OmitStackTraceInFastThrow"]
+           :main-opts   ["-m" "kaocha.runner" "--config-file" "test/test.edn"]}
+  :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.24.0"}}
+          :jvm-opts   ^:replace ["-XX:-OmitStackTraceInFastThrow"]}}}
