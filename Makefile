@@ -1,4 +1,7 @@
 build-lib:
+	cd lib && clj -Spom && mvn package
+
+cambada-lib:
 	cd lib && clj -A:build 0.1
 
 update-lib:
