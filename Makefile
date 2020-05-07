@@ -12,7 +12,7 @@ upgrade-uberlib: build-lib update-uberlib
 upgrade-lib: build-lib update-lib
 
 proj-repl:
-	cd proj &&	rm -rf .cpcache && clj -A:test:nrepl
+	cd proj && rm -rf .cpcache && clj -A:test:nrepl
 
 proj-test:
 	cd proj && rm -rf .cpcache && clj -A:test:kaocha
